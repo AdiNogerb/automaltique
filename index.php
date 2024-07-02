@@ -3,8 +3,9 @@ require __DIR__.'/controllers/HomeCtrl.php';
 
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
-        case 'menu':
-            # code...
+        case 'home':
+            $page = new HomeCtrl();
+            $page->renderView();
             break;
         
         default:
@@ -12,4 +13,7 @@ if (isset($_GET['page'])) {
             $page->renderView();
             break;
     }
+} else {
+    header('Location: /index.php?page=home');
+    die;
 }

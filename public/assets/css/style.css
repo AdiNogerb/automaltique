@@ -1,0 +1,150 @@
+/* ####################################### Style police ####################################### */
+.noto-sans {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-yellow {
+    color: #FDBB2D;
+}
+
+.text-blue {
+    color: #1D364A;
+}
+
+.sub-title {
+    font-size: 2.5em;
+}
+
+@media screen and (min-width: 992px){
+    .title{
+        font-size: 4em;
+    }
+    .sub-titile{
+        font-size: 4em;
+    }
+}
+
+#title-mark {
+    font-size: 1.2em;
+}
+
+.text {
+    font-size: 1.5em;
+}
+@media screen and (max-width: 1200px){
+    .text {
+        font-size: 1em;
+    }
+}
+
+
+/* ##################################### Autres styles généraux ##################################### */
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #FDBB2D;
+    --bs-btn-border-color: #1D364A;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #1D364A;
+    --bs-btn-hover-border-color: #FDBB2D;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #1D364A;
+    --bs-btn-active-border-color: #FDBB2D;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #FDBB2D;
+    --bs-btn-disabled-border-color: #1D364A;
+    border-width: 5px;
+    box-shadow: 10px 5px 5px black;
+    color: #1D364A;
+}    
+
+.border-yellow {
+    border: 5px solid #FDBB2D;
+}    
+
+.border-blue {
+    border: 5px solid #1D364A;
+}    
+
+
+/* ####################################### Nav bar ####################################### */
+#navLogo {
+    max-height: 50px;
+}            
+
+.navbar {
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}            
+
+
+/* ####################################### Header ####################################### */
+header, footer {
+    background-color: #1D364A;
+}            
+
+#logo {
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* La durée et le type de transition */
+}    
+
+#logo.loaded {
+    opacity: 1;
+}    
+
+.carousel-block {
+    min-height: 570px;
+}
+
+@media screen and (min-width: 992px){
+    /* CSS de base pour le carousel */
+    .carousel {
+        opacity: 0;
+        transform: translateX(20px); /* Translation initiale */
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    
+    /* Classe active pour déclencher la translation */
+    .carousel.in-view {
+        opacity: 1;
+        transform: translateX(0); /* Translation vers sa position d'origine */
+    }
+}
+
+#map { 
+    height: 360px; 
+}
+
+td {
+    padding: 5px 10px;
+    border: 2px solid antiquewhite;
+}
+
+@media screen and (min-width: 992px){
+    .schedules {
+        opacity: 0;
+        transform: translateX(20px); 
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    
+    .schedules.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.accordion-collapse{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
