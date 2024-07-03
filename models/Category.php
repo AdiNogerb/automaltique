@@ -8,6 +8,7 @@
 class Category extends BaseModel
 {
     use AccessorTrait;
+    protected int $id_category = 0;
 
     /**
      * Constructeur de la classe Category.
@@ -18,7 +19,7 @@ class Category extends BaseModel
      * @param integer $id_category L'identifiant de la catégorie (par défaut 0).
      * @param string $name Le nom de la catégorie (par défaut une chaîne vide).
      */
-    public function __construct(protected int $id_category = 0, protected string $name = '')
+    public function __construct(protected string $name = '')
     {
         parent::__construct();
     }

@@ -8,6 +8,7 @@
 class Product extends BaseModel
 {
     use AccessorTrait;
+    protected int $id_product = 0;
 
     /**
      * Constructeur de la classe Product.
@@ -24,7 +25,6 @@ class Product extends BaseModel
      * @param string $price_happy Le prix du produit en happy hour (par défaut une chaîne vide).
      */
     public function __construct(
-        protected int $id_product = 0, 
         protected int $id_category = 0, 
         protected string $name = '', 
         protected string $description = '',
