@@ -67,7 +67,7 @@
          
         <!-- BUTTON SHOW MENU -->
         <div class="col-12 d-flex justify-content-center align-items-center my-5">
-            <a href="/controllers/menu_ctrl.php"><button type="button" class="btn btn-primary poetsen-one-regular fs-2 px-5 rounded-5">Voir la Carte</button></a>
+            <a href="/index.php?page=menu"><button type="button" class="btn btn-primary poetsen-one-regular fs-2 px-5 rounded-5">Voir la Carte</button></a>
         </div>
         <!-- BUTTON SHOW MENU -->
     </div>

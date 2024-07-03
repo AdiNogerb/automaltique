@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-black sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.php">
+            <a class="navbar-brand" href="/index.php?page=home">
                 <img id="navLogo" src="/public/assets/img/logo_white.png" alt="logo automaltique" class="ms-3">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +27,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center me-lg-3">
                     <li class="nav-item">
-                        <a class="text-white noto-sans nav-link active" aria-current="page" href="/index.php">Accueil</a>
+                        <a class="text-white noto-sans nav-link active" aria-current="page" href="/index.php?page=home">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-white noto-sans nav-link" href="/controllers/menu_ctrl.php">Carte</a>
+                        <a class="text-white noto-sans nav-link" href="/index.php?page=menu">Carte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-white noto-sans nav-link" href="/controllers/dashboard/home_ctrl.php">Paramètres</a>
+                        <a class="text-white noto-sans nav-link" href="#">Paramètres</a>
                     </li>
                 </ul>
             </div>
