@@ -8,6 +8,8 @@ require __DIR__.'/models/Product.php';
 require __DIR__.'/controllers/Controller.php';
 require __DIR__.'/controllers/HomeCtrl.php';
 require __DIR__.'/controllers/MenuCtrl.php';
+require __DIR__.'/controllers/dashboard/DashHomeCtrl.php';
+require __DIR__.'/controllers/dashboard/DashCategoryCtrl.php';
 
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
@@ -19,6 +21,16 @@ if (isset($_GET['page'])) {
         case 'menu':
             $page = new MenuCtrl();
             $page->renderView();
+            break;
+
+        case 'dashboard':
+            $page = new DashHomeCtrl();
+            $page->renderView();
+            break;
+
+        case 'dashboard/categories':
+            $page = new DashCategoryCtrl();
+            $page->read();
             break;
 
         default:

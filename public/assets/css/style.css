@@ -75,7 +75,11 @@
 
 .border-blue {
     border: 5px solid #1D364A;
-}    
+}
+
+.bg-yellow{
+    background-color: #FDBB2D !important;
+}
 
 
 /* ####################################### Nav bar ####################################### */

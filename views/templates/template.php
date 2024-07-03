@@ -33,7 +33,7 @@
                         <a class="text-white noto-sans nav-link" href="/index.php?page=menu">Carte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-white noto-sans nav-link" href="#">Paramètres</a>
+                        <a class="text-white noto-sans nav-link" href="/index.php?page=dashboard">Paramètres</a>
                     </li>
                 </ul>
             </div>
