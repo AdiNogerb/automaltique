@@ -26,6 +26,8 @@ class DashCategoryCtrl extends Controller
      */
     public function read(): void
     {
+        $this->checkConnexion();
+
         $pageScript = 'dash_home';
         $categories = $this->listCategories();
 
@@ -43,7 +45,10 @@ class DashCategoryCtrl extends Controller
      */
     public function create(): void
     {
+        $this->checkConnexion();
+
         $pageScript = 'add_category';
+        $title = 'Ajouter une Catégorie';
         $errorBack = false;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -62,6 +67,39 @@ class DashCategoryCtrl extends Controller
                 $errorBack = 'Erreur lors de l\'envoi du nom';
             }
         }
+
+        require_once __DIR__.'/../../views/dashboard/categories/add.php';
+        require_once __DIR__.'/../../views/templates/template.php';
+    }
+
+    public function update(): void
+    {
+        $this->checkConnexion();
+        $categories = $this->listCategories();
+        $id = '';
+        $name = '';
+        $isOk = false;
+
+        if (!empty($_GET['id'])) {
+            $id = $_GET['id'];
+            foreach ($categories as $category) {
+                if ($category->id_category == $id) {
+                    $isOk = true;
+                    $name = $category->name;
+                }
+            }
+            if (!$isOk) {
+                header('Location: /index.php?page=dashboard/categories');
+                die;
+            }
+        } else {
+            header('Location: /index.php?page=dashboard/categories');
+            die;
+        }
+        
+        $pageScript = 'add_category';
+        $title = 'Modifier la Catégorie '.$name;
+        $errorBack = false;
 
         require_once __DIR__.'/../../views/dashboard/categories/add.php';
         require_once __DIR__.'/../../views/templates/template.php';

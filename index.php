@@ -37,6 +37,11 @@ if (isset($_GET['page'])) {
             $page = new DashCategoryCtrl();
             $page->create();
             break;
+
+        case 'dashboard/categories/update':
+            $page = new DashCategoryCtrl();
+            $page->update();
+            break;
         
         default:
             $page = new HomeCtrl();

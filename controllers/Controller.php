@@ -43,7 +43,16 @@ class Controller
         }
     }
 
-    public function adaptRegex($string) {
+    public function adaptRegex(string $string): string
+    {
         return substr($string, 2, -2);
+    }
+
+    public function checkConnexion(): void
+    {
+        if (!isset($_COOKIE['Admin'])) {
+            header(('Location: index.php?page=home'));
+            die;
+        }
     }
 }
