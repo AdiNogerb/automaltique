@@ -33,6 +33,11 @@ if (isset($_GET['page'])) {
             $page->read();
             break;
 
+        case 'dashboard/categories/add':
+            $page = new DashCategoryCtrl();
+            $page->create();
+            break;
+        
         default:
             $page = new HomeCtrl();
             $page->renderView();

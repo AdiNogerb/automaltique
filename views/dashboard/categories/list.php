@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-    <main class="container noto-sans fw-bold">
+    <div class="container noto-sans fw-bold mb-5">
         <div class="row justify-content-center align-items-center">
             <table class="table">
                 <thead>
@@ -23,7 +23,9 @@
                     ?>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success"><a href="/index.php?page=dashboard/categories/add" class="text-decoration-none text-white"><i class="fa-solid fa-circle-plus"></i> Ajouter une catégorie</a></button>
         </div>
-    </main>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="/index.php?page=dashboard/categories/add" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> Ajouter une catégorie</a>
+        </div>
+    </div>
 <?php $main = ob_get_clean() ?>

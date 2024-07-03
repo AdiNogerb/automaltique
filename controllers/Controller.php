@@ -41,5 +41,9 @@ class Controller
         } catch (Exception $e) {
             throw new Exception('Erreur lors de la récupération des produits: ' . $e->getMessage());
         }
-    }    
+    }
+
+    public function adaptRegex($string) {
+        return substr($string, 2, -2);
+    }
 }

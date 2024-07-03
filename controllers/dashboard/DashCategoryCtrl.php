@@ -14,4 +14,11 @@ class DashCategoryCtrl extends Controller
         require_once __DIR__.'/../../views/dashboard/categories/list.php';
         require_once __DIR__.'/../../views/templates/template.php';
     }
+
+    public function create()
+    {
+        $pageScript = 'add_category';
+        require_once __DIR__.'/../../views/dashboard/categories/add.php';
+        require_once __DIR__.'/../../views/templates/template.php';
+    }
 }
