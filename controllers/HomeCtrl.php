@@ -1,14 +1,28 @@
 <?php
 
-class HomeCtrl
+/**
+ * Contrôleur HomeCtrl
+ *
+ * Ce contrôleur étend la classe Controller et cette classe est responsable de la logique de contrôle de la page d'accueil.
+ */
+class HomeCtrl extends Controller
 {
+    /**
+     * Constructeur de la classe HomeCtrl.
+     *
+     * Initialise une nouvelle instance de la classe HomeCtrl.
+     */
     public function __construct()
     {
     }
 
     /**
-     * Appel des fichiers vues demandés pour la page d'accueil
+     * Affiche la vue de la page d'accueil.
      *
+     * Cette méthode détermine le message, le style et l'image à afficher en fonction du jour de la semaine et de l'heure actuelle.
+     * Ensuite, elle inclut les fichiers de vue correspondants.
+     *
+     * @return void
      */
     public function renderView(): void
     {
