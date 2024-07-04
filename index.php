@@ -55,9 +55,8 @@ if (isset($_GET['page'])) {
             break;
 
         default:
-            $page = new HomeCtrl();
-            $page->renderView();
-            break;
+            header('Location: /index.php?page=home');
+            die;
     }
 } else {
     header('Location: /index.php?page=home');
