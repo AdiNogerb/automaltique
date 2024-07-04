@@ -54,6 +54,11 @@ if (isset($_GET['page'])) {
             $page->read();
             break;
 
+        case 'dashboard/products/add':
+            $page = new DashProductCtrl();
+            $page->create();
+            break;
+
         default:
             header('Location: /index.php?page=home');
             die;

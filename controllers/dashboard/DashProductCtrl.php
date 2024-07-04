@@ -22,4 +22,40 @@ class DashProductCtrl extends Controller
         require_once __DIR__.'/../../views/dashboard/products/list.php';
         require_once __DIR__.'/../../views/templates/template.php';
     }
+
+    public function create(): void
+    {
+        $this->checkConnexion();
+
+        $pageScript = 'add_product';
+        $categories = $this->listCategories();
+        $products = $this->listProducts();
+        $id = '';
+        $name = '';
+        $isOk = false;
+        $errorName = '';
+        $errorDescription = '';
+
+        if (!empty($_GET['id'])) {
+            foreach ($categories as $category) {
+                if ($category->id_category == $_GET['id']) {
+                    $id = $category->id_category;
+                    $name = $category->name;
+                    $isOk = true;
+                }
+            }
+            if (!$isOk) {
+                header(('Location: index.php?page=dashboard/products'));
+                die;
+            }
+        } else {
+            header(('Location: index.php?page=dashboard/products'));
+            die;
+        }
+
+        $title = 'Ajouter un produit dans la catégorie '.$name;
+
+        require_once __DIR__.'/../../views/dashboard/products/add.php';
+        require_once __DIR__.'/../../views/templates/template.php';
+    }
 }

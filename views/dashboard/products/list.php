@@ -46,7 +46,7 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <a href="/index.php?page=dashboard/products?id=<?=$category->id_category?>" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> Ajouter une catégorie</a>
+                    <a href="/index.php?page=dashboard/products/add&id=<?=$category->id_category?>" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> Ajouter un produit</a>
                 </div>
             </div>
         </div>
