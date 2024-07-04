@@ -107,6 +107,10 @@ class DashCategoryCtrl extends Controller
             die;
         }
         
+        $pageScript = 'add_category';
+        $title = 'Modifier la Catégorie '.$name;
+        $errorBack = false;
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($_POST['category'])) {
                 $sanitizeCategory = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -125,16 +129,56 @@ class DashCategoryCtrl extends Controller
             }
         }
 
-        $pageScript = 'add_category';
-        $title = 'Modifier la Catégorie '.$name;
-        $errorBack = false;
-
         require_once __DIR__.'/../../views/dashboard/categories/add.php';
         require_once __DIR__.'/../../views/templates/template.php';
     }
 
+    /**
+     * Supprime une catégorie.
+     * 
+     * Cette méthode vérifie la connexion, récupère les catégories existantes, et permet la suppression d'une catégorie spécifique.
+     * Si l'ID de la catégorie à supprimer n'est pas spécifié ou est invalide, l'utilisateur est redirigé vers la liste des catégories.
+     *
+     * @return void
+     */
     public function delete(): void
     {
         $this->checkConnexion();
+        $categories = $this->listCategories();
+        $id = '';
+        $name = '';
+        $isOk = false;
+
+        if (!empty($_GET['id'])) {
+            $id = $_GET['id'];
+            foreach ($categories as $category) {
+                if ($category->id_category == $id) {
+                    $isOk = true;
+                    $name = $category->name;
+                }
+            }
+            if (!$isOk) {
+                header('Location: /index.php?page=dashboard/categories');
+                die;
+            }
+        } else {
+            header('Location: /index.php?page=dashboard/categories');
+            die;
+        }
+
+        $pageScript = 'del_category';
+        $title = 'Supprimer la Catégorie '.$name;
+        $errorBack = false;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $category = new Category();
+            $category->id_category = $id;
+            $category->delete();
+            header('Location: /index.php?page=dashboard/categories');
+            die;
+        }
+
+        require_once __DIR__.'/../../views/dashboard/categories/add.php';
+        require_once __DIR__.'/../../views/templates/template.php';
     }
 }

@@ -43,6 +43,11 @@ if (isset($_GET['page'])) {
             $page->update();
             break;
         
+        case 'dashboard/categories/delete':
+            $page = new DashCategoryCtrl();
+            $page->delete();
+            break;
+
         default:
             $page = new HomeCtrl();
             $page->renderView();
