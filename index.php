@@ -10,6 +10,7 @@ require __DIR__.'/controllers/HomeCtrl.php';
 require __DIR__.'/controllers/MenuCtrl.php';
 require __DIR__.'/controllers/dashboard/DashHomeCtrl.php';
 require __DIR__.'/controllers/dashboard/DashCategoryCtrl.php';
+require __DIR__.'/controllers/dashboard/DashProductCtrl.php';
 
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
@@ -46,6 +47,11 @@ if (isset($_GET['page'])) {
         case 'dashboard/categories/delete':
             $page = new DashCategoryCtrl();
             $page->delete();
+            break;
+
+        case 'dashboard/products':
+            $page = new DashProductCtrl();
+            $page->read();
             break;
 
         default:

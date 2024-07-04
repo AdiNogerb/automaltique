@@ -20,7 +20,8 @@
     <h2 class="poetsen-one-regular text-success mb-5 text-nowrap text-center">Connexion Validée</h2>
     <h3 class="poetsen-one-regular mb-5 fs-1 text-nowrap text-center">Section à administrer :</h3>
     <div class="d-flex flex-column justify-content-center align-items-center">
-        <a href="/index.php?page=dashboard/categories" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2">Les Catégories</a>
+        <a href="/index.php?page=dashboard/categories" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 my-3">Les Catégories</a>
+        <a href="/index.php?page=dashboard/products" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 my-3">Les Produits</a>
     </div>
 </div>
 <?php $main = ob_get_clean() ?>
