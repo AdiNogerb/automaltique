@@ -72,6 +72,16 @@ class DashCategoryCtrl extends Controller
         require_once __DIR__.'/../../views/templates/template.php';
     }
 
+    /**
+     * Met à jour une catégorie existante.
+     *
+     * Cette méthode vérifie la connexion, récupère les catégories existantes, et permet la mise à jour d'une catégorie spécifique.
+     * Si l'ID de la catégorie à mettre à jour n'est pas spécifié ou est invalide, l'utilisateur est redirigé vers la liste des catégories.
+     * Si le formulaire de mise à jour est soumis, la méthode valide et sanitize les données saisies avant de les mettre à jour dans la base de données.
+     * En cas de succès, l'utilisateur est redirigé vers la liste des catégories.
+     *
+     * @return void
+     */
     public function update(): void
     {
         $this->checkConnexion();
@@ -97,11 +107,34 @@ class DashCategoryCtrl extends Controller
             die;
         }
         
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!empty($_POST['category'])) {
+                $sanitizeCategory = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_SPECIAL_CHARS);
+                $validCategory = filter_var($sanitizeCategory, FILTER_VALIDATE_REGEXP, array('options'=>array('regexp'=> REGEXP_NAME)));
+                if ($validCategory) {
+                    $category = new Category($validCategory);
+                    $category->id_category = $id;
+                    $category->update();
+                    header('Location: /index.php?page=dashboard/categories');
+                    die;
+                } else {
+                    $errorBack = 'Nom de catégorie non valide';
+                }
+            } else {
+                $errorBack = 'Erreur lors de l\'envoi du nom';
+            }
+        }
+
         $pageScript = 'add_category';
         $title = 'Modifier la Catégorie '.$name;
         $errorBack = false;
 
         require_once __DIR__.'/../../views/dashboard/categories/add.php';
         require_once __DIR__.'/../../views/templates/template.php';
+    }
+
+    public function delete(): void
+    {
+        $this->checkConnexion();
     }
 }
