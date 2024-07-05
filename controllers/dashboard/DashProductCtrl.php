@@ -37,6 +37,7 @@ class DashProductCtrl extends Controller
         $errorPint = '';
         $errorHappy = '';
         $errorBottle = '';
+        $requiredField = true;
         
         if (!empty($_GET['id'])) {
             foreach ($categories as $category) {
@@ -57,6 +58,10 @@ class DashProductCtrl extends Controller
         
         $title = 'Ajouter un produit dans la catégorie '.$name;
         $pageScript = 'add_product';
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            # code...
+        }
 
         require_once __DIR__.'/../../views/dashboard/products/add.php';
         require_once __DIR__.'/../../views/templates/template.php';
