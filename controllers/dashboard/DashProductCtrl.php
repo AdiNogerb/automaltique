@@ -28,7 +28,16 @@ class DashProductCtrl extends Controller
         $this->checkConnexion();
         $categories = $this->listCategories();
         $products = $this->listProducts();
-
+        $id = '';
+        $name = '';
+        $isOk = false;
+        $errorName = '';
+        $errorDescription = '';
+        $errorPrice = '';
+        $errorPint = '';
+        $errorHappy = '';
+        $errorBottle = '';
+        
         if (!empty($_GET['id'])) {
             foreach ($categories as $category) {
                 if ($category->id_category == $_GET['id']) {
@@ -45,14 +54,9 @@ class DashProductCtrl extends Controller
             header(('Location: index.php?page=dashboard/products'));
             die;
         }
-
-        $pageScript = 'add_product';
-        $id = '';
-        $name = '';
-        $isOk = false;
-        $errorName = '';
-        $errorDescription = '';
+        
         $title = 'Ajouter un produit dans la catégorie '.$name;
+        $pageScript = 'add_product';
 
         require_once __DIR__.'/../../views/dashboard/products/add.php';
         require_once __DIR__.'/../../views/templates/template.php';
