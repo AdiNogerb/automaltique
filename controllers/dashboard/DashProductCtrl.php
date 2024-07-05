@@ -26,15 +26,8 @@ class DashProductCtrl extends Controller
     public function create(): void
     {
         $this->checkConnexion();
-
-        $pageScript = 'add_product';
         $categories = $this->listCategories();
         $products = $this->listProducts();
-        $id = '';
-        $name = '';
-        $isOk = false;
-        $errorName = '';
-        $errorDescription = '';
 
         if (!empty($_GET['id'])) {
             foreach ($categories as $category) {
@@ -53,6 +46,12 @@ class DashProductCtrl extends Controller
             die;
         }
 
+        $pageScript = 'add_product';
+        $id = '';
+        $name = '';
+        $isOk = false;
+        $errorName = '';
+        $errorDescription = '';
         $title = 'Ajouter un produit dans la catégorie '.$name;
 
         require_once __DIR__.'/../../views/dashboard/products/add.php';
