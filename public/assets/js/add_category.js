@@ -1,9 +1,10 @@
 // Déclarations des constantes
 const regex = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ\-\' ]{1,50}$/;
+const categories = [];
 const input = document.getElementById('category');
 const error = document.getElementById('error');
 const button = document.getElementById('button');
-const categories = [];
+button.setAttribute('disabled', '');
 
 
 // Définition des fonctions

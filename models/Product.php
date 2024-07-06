@@ -8,7 +8,12 @@
 class Product extends BaseModel
 {
     use AccessorTrait;
-    protected int $id_product = 0;
+    protected int $id_product;
+    protected ?string $description;
+    protected ?string $price;
+    protected ?string $price_pint;
+    protected ?string $price_happy;
+    protected ?string $price_bottle;
 
     /**
      * Constructeur de la classe Product.
@@ -23,14 +28,11 @@ class Product extends BaseModel
      * @param string $price Le prix du produit (par défaut une chaîne vide).
      * @param string $price_pint Le prix du produit à la pinte (par défaut une chaîne vide).
      * @param string $price_happy Le prix du produit en happy hour (par défaut une chaîne vide).
+     * @param string $price_bottle Le prix du produit pour une bouteille (par défaut une chaîne vide).
      */
     public function __construct(
         protected int $id_category = 0, 
-        protected string $name = '', 
-        protected string $description = '',
-        protected string $price = '',
-        protected string $price_pint = '',
-        protected string $price_happy = '')
+        protected string $name = '')
     {
         parent::__construct();
     }
@@ -66,18 +68,19 @@ class Product extends BaseModel
     public function insert(): void
     {
         try {
-            $sql = 'INSERT INTO `products` (`id_category`, `name`, `description`, `price`, `price_pint`, `price_happy`) 
-                    VALUES (:id_category, :name, :description, :price, :price_pint, :price_happy);';
+            $sql = 'INSERT INTO `products` (`id_category`, `name`, `description`, `price`, `price_pint`, `price_happy`, `price_bottle`) 
+                    VALUES (:id_category, :name, :description, :price, :price_pint, :price_happy, :price_bottle);';
             $stmt = $this->db->prepare($sql); 
             $stmt->bindValue(':id_category', $this->id_category, PDO::PARAM_INT);
             $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
             $stmt->bindValue(':description', $this->description, PDO::PARAM_STR);
-            $stmt->bindValue(':price', $this->price, PDO::PARAM_STR);
-            $stmt->bindValue(':price_pint', $this->price_pint, PDO::PARAM_STR);
-            $stmt->bindValue(':price_happy', $this->price_happy, PDO::PARAM_STR);
+            $stmt->bindValue(':price', $this->price !== null ? $this->price : null, $this->price !== null ? PDO::PARAM_STR : PDO::PARAM_NULL);            
+            $stmt->bindValue(':price_pint', $this->price_pint !== null ? $this->price_pint : null, $this->price_pint !== null ? PDO::PARAM_STR : PDO::PARAM_NULL);
+            $stmt->bindValue(':price_happy', $this->price_happy !== null ? $this->price_happy : null, $this->price_happy !== null ? PDO::PARAM_STR : PDO::PARAM_NULL);
+            $stmt->bindValue(':price_bottle', $this->price_bottle !== null ? $this->price_bottle : null, $this->price_bottle !== null ? PDO::PARAM_STR : PDO::PARAM_NULL);
             $stmt->execute();
-        } catch (Exception) {
-            throw new Exception('Méthode insert de la classe Product défectueuse');
+        } catch (Exception $e) {
+            throw new Exception('Méthode insert de la classe Product défectueuse'. $e->getMessage());
         }
     }
 
@@ -93,7 +96,7 @@ class Product extends BaseModel
     {
         try {
             $sql = 'UPDATE `products` SET `id_category` = :id_category, `name` = :name, `description` = :description, 
-                    `price` = :price, `price_pint` = :price_pint, `price_happy` = :price_happy 
+                    `price` = :price, `price_pint` = :price_pint, `price_happy` = :price_happy, `price_bottle` = :price_bottle
                     WHERE `products`.`id_product` = :id_product;';
             $stmt = $this->db->prepare($sql);
             $stmt->bindValue(':id_category', $this->id_category, PDO::PARAM_INT);
@@ -102,6 +105,7 @@ class Product extends BaseModel
             $stmt->bindValue(':price', $this->price, PDO::PARAM_STR);
             $stmt->bindValue(':price_pint', $this->price_pint, PDO::PARAM_STR);
             $stmt->bindValue(':price_happy', $this->price_happy, PDO::PARAM_STR);
+            $stmt->bindValue(':price_bottle', $this->price_bottle, PDO::PARAM_STR);
             $stmt->bindValue(':id_product', $this->id_product, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception) {

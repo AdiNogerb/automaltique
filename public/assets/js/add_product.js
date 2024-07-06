@@ -15,6 +15,7 @@ const errorHappy = document.getElementById('error-happy');
 const bottle = document.getElementById('product-bottle');
 const errorBottle = document.getElementById('error-bottle');
 const button = document.getElementById('button');
+button.setAttribute('disabled', '');
 
 // ###########################################  Fonctions  ###########################################
 /**

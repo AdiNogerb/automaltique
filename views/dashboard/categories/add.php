@@ -10,7 +10,7 @@
                     <p id="error" class="d-none text-danger fst-italic"></p>
                     <p class="text-danger fst-italic <?=($errorBack) ? '' : 'd-none'?>"><?=$errorBack??''?></p>
                     <div class="d-flex justify-content-center align-items-center mt-3">
-                        <button id="button" type="submit" class="btn btn-success fw-bold" disabled>Valider</button>
+                        <button id="button" type="submit" class="btn btn-success fw-bold">Valider</button>
                     </div>
                 </form>
             </fieldset>
