@@ -37,7 +37,7 @@ class DashHomeCtrl extends Controller
                     die();
                 }
             }
-        }        
+        }
 
         require_once __DIR__ . '/../../views/dashboard/home.php';
         require_once __DIR__ . '/../../views/templates/template.php';

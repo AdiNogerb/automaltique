@@ -9,11 +9,6 @@ class Product extends BaseModel
 {
     use AccessorTrait;
     protected int $id_product;
-    protected ?string $description;
-    protected ?string $price;
-    protected ?string $price_pint;
-    protected ?string $price_happy;
-    protected ?string $price_bottle;
 
     /**
      * Constructeur de la classe Product.
@@ -32,7 +27,12 @@ class Product extends BaseModel
      */
     public function __construct(
         protected int $id_category = 0, 
-        protected string $name = '')
+        protected string $name = '',
+        protected ?string $description = null,
+        protected ?string $price = null,
+        protected ?string $price_pint = null,
+        protected ?string $price_happy = null,
+        protected ?string $price_bottle = null)
     {
         parent::__construct();
     }

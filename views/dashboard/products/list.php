@@ -35,8 +35,8 @@
                                         <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>" scope="row"><?=$product->price_pint?></td>
                                         <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>" scope="row"><?=$product->price_happy?></td>
                                         <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>" scope="row"><?=$product->price_bottle?></td>
-                                        <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>"><a href="index.php?page=dashboard/products/update&idCategory=<?=$category->id_category?>&idProduct=<?=$product->id_product?>"><i class="text-primary fa-xl fa-solid fa-pen-to-square"></i></a></td>
-                                        <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>"><a href="index.php?page=dashboard/products/delete&idCategory=<?=$category->id_category?>&idProduct=<?=$product->id_product?>"><i class="text-danger fa-xl fa-solid fa-trash"></i></a></td>
+                                        <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>"><a href="index.php?page=dashboard/products/update&id=<?=$category->id_category?>&product=<?=$product->id_product?>"><i class="text-primary fa-xl fa-solid fa-pen-to-square"></i></a></td>
+                                        <td class="<?=($count % 2 != 0) ? 'bg-yellow' : ''?>"><a href="index.php?page=dashboard/products/delete&id=<?=$category->id_category?>&product=<?=$product->id_product?>"><i class="text-danger fa-xl fa-solid fa-trash"></i></a></td>
                                     </tr>
                                     <?php $count++;
                                 }

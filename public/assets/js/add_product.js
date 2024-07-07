@@ -1,5 +1,5 @@
 // ###########################################  Déclaration des constantes  ###########################################
-const regexName = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ\-\' ]{1,50}$/;
+const regexName = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ0-9\-\/\.\(\) ]{1,50}$/;
 const regexDescription = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ0-9\-\/\.\, ]{1,100}$/;
 const regexPrice = /^(\d){1,3}[.,]{0,1}(\d){0,2}$/;
 const productName = document.getElementById('product-name');
@@ -129,6 +129,7 @@ productName.addEventListener('keyup', (e) => {
 
 description.addEventListener('keyup', (e) => {
     checkRegexDescription(e.target, e.target.value);
+    checkRegexName(productName, productName.value);
     checkButton();
     if (description.classList.contains('is-valid')) {
         errorDescription.classList.add('d-none');
@@ -141,6 +142,7 @@ description.addEventListener('keyup', (e) => {
 
 price.addEventListener('keyup', (e) => {
     checkRegexPrice(e.target, e.target.value);
+    checkRegexName(productName, productName.value);
     checkButton();
     if (price.classList.contains('is-valid')) {
         errorPrice.classList.add('d-none');
@@ -153,6 +155,7 @@ price.addEventListener('keyup', (e) => {
 
 pint.addEventListener('keyup', (e) => {
     checkRegexPrice(e.target, e.target.value);
+    checkRegexName(productName, productName.value);
     checkButton();
     if (pint.classList.contains('is-valid')) {
         errorPint.classList.add('d-none');
@@ -165,6 +168,7 @@ pint.addEventListener('keyup', (e) => {
 
 happy.addEventListener('keyup', (e) => {
     checkRegexPrice(e.target, e.target.value);
+    checkRegexName(productName, productName.value);
     checkButton();
     if (happy.classList.contains('is-valid')) {
         errorHappy.classList.add('d-none');
@@ -177,6 +181,7 @@ happy.addEventListener('keyup', (e) => {
 
 bottle.addEventListener('keyup', (e) => {
     checkRegexPrice(e.target, e.target.value);
+    checkRegexName(productName, productName.value);
     checkButton();
     if (bottle.classList.contains('is-valid')) {
         errorBottle.classList.add('d-none');
