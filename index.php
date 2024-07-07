@@ -64,6 +64,11 @@ if (isset($_GET['page'])) {
             $page->update();
             break;
 
+        case 'dashboard/products/delete':
+            $page = new DashProductCtrl();
+            $page->delete();
+            break;
+
         default:
             header('Location: /index.php?page=home');
             die;

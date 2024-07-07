@@ -42,7 +42,6 @@ class DashProductCtrl extends Controller
     {
         $this->checkConnexion();
         $categories = $this->listCategories();
-        $name = '';
         $isOk = false;
         
         if (!empty($_GET['id'])) {
@@ -120,6 +119,8 @@ class DashProductCtrl extends Controller
                     }
                     $product = new Product($id, $validName, $validDescription, $validPrice, $validPint, $validHappy, $validBottle);
                     $product->insert();
+                    header('Location: /index.php?page=dashboard/products');
+                    die;
                 } else {
                     $errorBack = 'Les champs remplis ne sont pas valides';
                 }
@@ -137,9 +138,7 @@ class DashProductCtrl extends Controller
         $this->checkConnexion();
         $categories = $this->listCategories();
         $products = $this->listProducts();
-        $name = '';
         $isOk = false;
-        $productSelected = null;
 
         if (!empty($_GET['id']) && !empty($_GET['product'])) {
             foreach ($categories as $category) {
@@ -183,6 +182,8 @@ class DashProductCtrl extends Controller
                         if (!$validDescription) {
                             $validDescription = null;
                         }
+                    } else {
+                        $validDescription = null;
                     }
                     if (!empty($_POST['product-price'])) {
                         $sanitizePrice = filter_input(INPUT_POST, 'product-price', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -192,6 +193,8 @@ class DashProductCtrl extends Controller
                         } else {
                             $validPrice = null;
                         }
+                    } else {
+                        $validPrice = null;
                     }
                     if (!empty($_POST['product-pint'])) {
                         $sanitizePint = filter_input(INPUT_POST, 'product-pint', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -201,6 +204,8 @@ class DashProductCtrl extends Controller
                         } else {
                             $validPint = null;
                         }
+                    } else {
+                        $validPint = null;
                     }
                     if (!empty($_POST['product-happy'])) {
                         $sanitizeHappy = filter_input(INPUT_POST, 'product-happy', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -210,6 +215,8 @@ class DashProductCtrl extends Controller
                         } else {
                             $validHappy = null;
                         }
+                    } else {
+                        $validHappy = null;
                     }
                     if (!empty($_POST['product-bottle'])) {
                         $sanitizeBottle = filter_input(INPUT_POST, 'product-bottle', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -219,16 +226,71 @@ class DashProductCtrl extends Controller
                         } else {
                             $validBottle = null;
                         }
+                    } else {
+                        $validBottle = null;
                     }
                     $product = new Product($id, $validName, $validDescription, $validPrice, $validPint, $validHappy, $validBottle);
                     $product->id_product = $productSelected->id_product;
                     $product->update();
+                    header('Location: /index.php?page=dashboard/products');
+                    die;
                 } else {
                     $errorBack = 'Les champs remplis ne sont pas valides';
                 }
             } else {
                 $errorBack = 'Erreur lors de l\'envoi des champs du produit';
             }
+        }
+
+        require_once __DIR__.'/../../views/dashboard/products/add.php';
+        require_once __DIR__.'/../../views/templates/template.php';
+    }
+
+    public function delete(): void
+    {
+        $this->checkConnexion();
+        $categories = $this->listCategories();
+        $products = $this->listProducts();
+        $isOk = false;
+        $disabled = true;
+
+        if (!empty($_GET['id']) && !empty($_GET['product'])) {
+            foreach ($categories as $category) {
+                if ($category->id_category == $_GET['id']) {
+                    $id = $category->id_category;
+                    $name = $category->name;
+                    foreach ($products as $product) {
+                        if ($product->id_product == $_GET['product']) {
+                            $productSelected = $product;
+                            $isOk = true;
+                        }
+                    }
+                }
+            }
+            if (!$isOk) {
+                header(('Location: index.php?page=dashboard/products'));
+                die;
+            }
+        } else {
+            header(('Location: index.php?page=dashboard/products'));
+            die;
+        }
+        
+        $title = 'Supprimer '.$productSelected->name.' dans la catégorie '.$name. ' ?';
+        $pageScript = 'add_product';
+        $validName = $productSelected->name;
+        $validDescription = $productSelected->description;
+        $validPrice = $productSelected->price;
+        $validPint = $productSelected->price_pint;
+        $validHappy = $productSelected->price_happy;
+        $validBottle = $productSelected->price_bottle;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $product = new Product();
+            $product->id_product = $productSelected->id_product;
+            $product->delete();
+            header('Location: /index.php?page=dashboard/products');
+            die;
         }
 
         require_once __DIR__.'/../../views/dashboard/products/add.php';

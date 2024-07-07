@@ -1,6 +1,6 @@
 // ###########################################  Déclaration des constantes  ###########################################
-const regexName = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ0-9\-\/\.\(\) ]{1,50}$/;
-const regexDescription = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ0-9\-\/\.\, ]{1,100}$/;
+const regexName = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ0-9\-\/\.\(\)\° ]{1,50}$/;
+const regexDescription = /^(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ0-9\-\/\.\,\(\)\° ]{1,100}$/;
 const regexPrice = /^(\d){1,3}[.,]{0,1}(\d){0,2}$/;
 const productName = document.getElementById('product-name');
 const errorName = document.getElementById('error-name');
