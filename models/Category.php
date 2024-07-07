@@ -35,7 +35,7 @@ class Category extends BaseModel
     public function getAll(): array
     {
         try {
-            $sql = 'SELECT * FROM `categories` ORDER BY `name`;';
+            $sql = 'SELECT * FROM `categories`;';
             $stmt = $this->db->query($sql);
             $categoryList = $stmt->fetchAll();
             return $categoryList;

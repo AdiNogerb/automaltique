@@ -11,7 +11,7 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-black" aria-label="Slide 3"></button>
             </div>
             <!-- END CAROUSEL BUTTONS -->
-    
+
             <!-- START CAROUSEL CONTENT -->
             <div class="carousel-inner">
                 <!-- START FIRST CONTENT -->
@@ -29,14 +29,15 @@
                     </div>
                 </div>
                 <!-- END FIRST CONTENT -->
-    
+
                 <!-- START SECOND CONTENT -->
                 <div class="carousel-item" data-bs-interval="5000">
                     <div class="my-5">
                         <div class="row mt-5 border-3 border-top border-bottom justify-content-center py-3 carousel-block">
                             <div class="col-12 col-lg-8">
                                 <h2 class="poetsen-one-regular text-center text-blue sub-title mb-5 mt-3">Les Blind Test</h2>
-                                <p class="noto-sans text-center text ps-lg-5">Découvrez les soirées <strong>Blind Test</strong> de <strong>L'Automaltique</strong>, où musique et divertissement créent une ambiance électrisante! Chaque semaine, formez votre équipe et participez à une compétition musicale palpitante. Que vous soyez mélomane ou amateur, nos <strong>Blind Tests</strong> sont parfaits pour un moment inoubliable entre amis. Avec des thèmes variés et des playlists sélectionnées, préparez-vous à chanter, danser et rire. L'esprit d'équipe et le plaisir de jouer ensemble rendent chaque soirée unique. Ne manquez pas cette expérience festive qui fait de <strong>L'Automaltique</strong> un lieu incontournable!</p>                    </div>
+                                <p class="noto-sans text-center text ps-lg-5">Découvrez les soirées <strong>Blind Test</strong> de <strong>L'Automaltique</strong>, où musique et divertissement créent une ambiance électrisante! Chaque semaine, formez votre équipe et participez à une compétition musicale palpitante. Que vous soyez mélomane ou amateur, nos <strong>Blind Tests</strong> sont parfaits pour un moment inoubliable entre amis. Avec des thèmes variés et des playlists sélectionnées, préparez-vous à chanter, danser et rire. L'esprit d'équipe et le plaisir de jouer ensemble rendent chaque soirée unique. Ne manquez pas cette expérience festive qui fait de <strong>L'Automaltique</strong> un lieu incontournable!</p>
+                            </div>
                             <div class="col-10 col-lg-4 d-flex justify-content-center align-items-center">
                                 <img class="img-fluid w-100 rounded-5" src="/public/assets/img/blindtest.jpg" alt="">
                             </div>
@@ -44,7 +45,7 @@
                     </div>
                 </div>
                 <!-- END SECOND CONTENT -->
-    
+
                 <!-- START THIRD CONTENT -->
                 <div class="carousel-item" data-bs-interval="5000">
                     <div class="my-5">
@@ -64,7 +65,7 @@
             <!-- END CAROUSEL CONTENT -->
         </div>
         <!-- END CAROUSEL -->    
-         
+
         <!-- BUTTON SHOW MENU -->
         <div class="col-12 d-flex justify-content-center align-items-center my-5">
             <a href="/index.php?page=menu"><button type="button" class="btn btn-primary poetsen-one-regular fs-2 px-5 rounded-5">Voir la Carte</button></a>

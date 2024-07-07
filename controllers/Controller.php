@@ -43,6 +43,16 @@ class Controller
         }
     }
 
+    public function listArticles(): array
+    {
+        try {
+            $articleModel = new Article();
+            return $articleModel->getAll();
+        } catch (Exception $e) {
+            throw new Exception('Erreur lors de la récupération des produits: ' . $e->getMessage());
+        }
+    }
+
     public function adaptRegex(string $string): string
     {
         return substr($string, 2, -2);

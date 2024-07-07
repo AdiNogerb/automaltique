@@ -27,7 +27,7 @@ class HomeCtrl extends Controller
     public function renderView(): void
     {
         $pageScript = 'home';
-
+        $articles = $this->listArticles();
         $date = new DateTime('now', new DateTimeZone('Europe/Paris'));
         $day = $date->format('N');
         $hour = $date->format('G');

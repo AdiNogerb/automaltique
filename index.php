@@ -5,12 +5,14 @@ require __DIR__.'/models/Database.php';
 require __DIR__.'/models/BaseModel.php';
 require __DIR__.'/models/Category.php';
 require __DIR__.'/models/Product.php';
+require __DIR__.'/models/Article.php';
 require __DIR__.'/controllers/Controller.php';
 require __DIR__.'/controllers/HomeCtrl.php';
 require __DIR__.'/controllers/MenuCtrl.php';
 require __DIR__.'/controllers/dashboard/DashHomeCtrl.php';
 require __DIR__.'/controllers/dashboard/DashCategoryCtrl.php';
 require __DIR__.'/controllers/dashboard/DashProductCtrl.php';
+require __DIR__.'/controllers/dashboard/DashArticleCtrl.php';
 
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
@@ -67,6 +69,11 @@ if (isset($_GET['page'])) {
         case 'dashboard/products/delete':
             $page = new DashProductCtrl();
             $page->delete();
+            break;
+
+        case 'dashboard/articles':
+            $page = new DashArticleCtrl();
+            $page->read();
             break;
 
         default:

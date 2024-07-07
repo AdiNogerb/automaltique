@@ -19,9 +19,16 @@
 <div class="container mb-5 <?=(isset($_COOKIE['Admin'])) ? '' : 'd-none'?>">
     <h2 class="poetsen-one-regular text-success mb-5 text-nowrap text-center">Connexion Validée</h2>
     <h3 class="poetsen-one-regular mb-5 fs-1 text-nowrap text-center">Section à administrer :</h3>
+    <hr class="border border-primary border-3 opacity-75">
     <div class="d-flex flex-column justify-content-center align-items-center">
-        <a href="/index.php?page=dashboard/categories" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 my-3">Les Catégories</a>
+        <h4 class="poetsen-one-regular mb-5 text-nowrap text-center">En rapport avec la carte</h4>
+        <a href="/index.php?page=dashboard/categories" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 mb-3">Les Catégories</a>
         <a href="/index.php?page=dashboard/products" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 my-3">Les Produits</a>
+    </div>
+    <hr class="border border-primary border-3 opacity-75 mt-5">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h4 class="poetsen-one-regular mb-5 text-nowrap text-center">En PAS rapport avec la carte</h4>
+        <a href="/index.php?page=dashboard/articles" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 mb-3">Les Articles</a>
     </div>
 </div>
 <?php $main = ob_get_clean() ?>
