@@ -8,13 +8,13 @@
                 <form action="#" method="post" class="noto-sans w-100">
                     <div class="mb-3">
                         <label for="product-name" class="pe-3 form-label">Nom* :</label>
-                        <input type="text" name="product-name" id="product-name" class="form-control" value="<?=$validName??''?>" title="Uniquement des lettres, chiffres, points, traits d'union et apostrophes" placeholder="exemple: ''La mousse au chocolat du patron''" pattern="<?=$this->adaptRegex(REGEX_PRODUCT_NAME)?>" required <?=(isset($disabled)) ? 'disabled' : ''?>>
+                        <input type="text" name="product-name" id="product-name" class="form-control" value="<?=$validName??''?>" title="Uniquement des lettres, chiffres et les caractères - / . ( ) °" placeholder="exemple: ''La mousse au chocolat du patron''" pattern="<?=$this->adaptRegex(REGEX_PRODUCT_NAME)?>" required <?=(isset($disabled)) ? 'disabled' : ''?>>
                         <p id="error-name" class="d-none text-danger fst-italic">Uniquement des lettres, chiffres et les caractères - / . ( ) °</p>
                         <p class="text-danger fst-italic <?=(isset($errorName)) ? '' : 'd-none'?>"><?=$errorName??''?></p>
                     </div>
                     <div class="mb-3">
                         <label for="product-description" class="pe-3 form-label">Description :</label>
-                        <input type="text" name="product-description" id="product-description" class="form-control" value="<?=$validDescription??''?>" title="Uniquement des lettres, chiffres, points, traits d'union, apostrophes et virgules" placeholder="exemple: ''Chocolat, poils, ongles, dents''" pattern="<?=$this->adaptRegex(REGEX_PRODUCT_DESCRIPTION)?>" <?=(isset($disabled)) ? 'disabled' : ''?>>
+                        <input type="text" name="product-description" id="product-description" class="form-control" value="<?=$validDescription??''?>" title="Uniquement des lettres, chiffres et les caractères - / . ( ) ° , '" placeholder="exemple: ''Chocolat, poils, ongles, dents''" pattern="<?=$this->adaptRegex(REGEX_PRODUCT_DESCRIPTION)?>" <?=(isset($disabled)) ? 'disabled' : ''?>>
                         <p id="error-description" class="d-none text-danger fst-italic">Uniquement des lettres, chiffres et les caractères - / . ( ) ° , '</p>
                         <p class="text-danger fst-italic <?=(isset($errorDescription)) ? '' : 'd-none'?>"><?=$errorDescription??''?></p>
                     </div>

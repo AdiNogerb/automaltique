@@ -16,4 +16,19 @@ class DashArticleCtrl extends Controller
         require_once __DIR__.'/../../views/dashboard/articles/list.php';
         require_once __DIR__.'/../../views/templates/template.php';
     }
+
+    public function create(): void
+    {
+        $this->checkConnexion();
+
+        $pageScript = 'add_article';
+        $title = 'Ajouter un nouvel article';
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
+        }
+        
+        require_once __DIR__.'/../../views/dashboard/articles/add.php';
+        require_once __DIR__.'/../../views/templates/template.php';
+    }
 }
