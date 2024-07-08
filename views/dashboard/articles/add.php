@@ -13,14 +13,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="content" class="pe-3 form-label">Contenu :</label>
-                        <textarea name="content" id="content" class="form-control" value="<?=$validContent??''?>" title="1000 caractères max" placeholder="1000 caractères max" maxlength="1000" minlength="5" required <?=(isset($disabled)) ? 'disabled' : ''?>></textarea>
+                        <textarea name="content" id="content" class="form-control" title="1000 caractères max" placeholder="1000 caractères max" maxlength="1000" minlength="5" required <?=(isset($disabled)) ? 'disabled' : ''?>><?=$validContent??''?></textarea>
                         <p id="error-content" class="d-none text-danger fst-italic">Entre 5 et 1000 caractères</p>
                         <p class="text-danger fst-italic <?=(isset($errorContent)) ? '' : 'd-none'?>"><?=$errorContent??''?></p>
                     </div>
                     <div class="mb-3">
                         <label for="picture" class="pe-3 form-label">Image :</label>
                         <input type="file" name="picture" id="picture" class="form-control" accept="image/png, image/jpeg" title="Image au format jpeg ou png" required <?=(isset($disabled)) ? 'disabled' : ''?>>
-                        <p id="error-picture" class="d-none text-danger fst-italic">Uniquement des images format jpeg ou png</p>
+                        <p id="error-picture" class="d-none text-danger fst-italic">Uniquement des images format jpeg ou png. 2Mo maximum.</p>
                         <p class="text-danger fst-italic <?=(isset($errorPicture)) ? '' : 'd-none'?>"><?=$errorPicture??''?></p>
                     </div>
                     <div class="d-flex justify-content-center align-items-center mt-3 <?=(isset($disabled)) ? 'd-none' : ''?>">

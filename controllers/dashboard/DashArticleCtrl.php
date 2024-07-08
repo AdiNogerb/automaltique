@@ -25,7 +25,16 @@ class DashArticleCtrl extends Controller
         $title = 'Ajouter un nouvel article';
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+            if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['picture'])) {
+                $sanitizeTitle = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+                $validTitle = filter_var($sanitizeTitle, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => REGEX_PRODUCT_NAME)));
+
+                $validContent = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_SPECIAL_CHARS);
+                var_dump($validContent);
+                
+            } else {
+                $errorBack = 'Erreur lors de l\'envoi des données';
+            }            
         }
         
         require_once __DIR__.'/../../views/dashboard/articles/add.php';
