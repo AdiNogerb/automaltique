@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         entry.target.classList.remove("loaded");
         }
     });
-    }, { threshold: 1.0 }); // 1.0 signifie que 100% de l'élément doit être visible
+    }, { threshold: 1.0 }); // ###########################################  1.0 signifie que 100% de l'élément doit être visible
 
     var target = document.getElementById('logo');
     observer.observe(target);

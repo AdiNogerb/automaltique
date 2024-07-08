@@ -64,6 +64,7 @@
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/assets/js/banner.js"></script>
     <script src="<?=(isset($pageScript)) ? '/public/assets/js/'.$pageScript.'.js' : ''?>"></script>
 </body>
 </html>
