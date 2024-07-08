@@ -133,6 +133,15 @@ class DashProductCtrl extends Controller
         require_once __DIR__.'/../../views/templates/template.php';
     }
 
+    /**
+     * Met à jour un produit existant.
+     *
+     * Cette méthode vérifie d'abord la connexion de l'utilisateur, puis récupère les catégories et les produits.
+     * Elle affiche le formulaire pour mettre à jour un produit sélectionné dans une catégorie spécifique.
+     * Si le formulaire est soumis, les données sont validées et le produit est mis à jour dans la base de données.
+     *
+     * @return void
+     */
     public function update(): void
     {
         $this->checkConnexion();
@@ -246,6 +255,15 @@ class DashProductCtrl extends Controller
         require_once __DIR__.'/../../views/templates/template.php';
     }
 
+    /**
+     * Supprime un produit existant.
+     *
+     * Cette méthode vérifie d'abord la connexion de l'utilisateur, puis récupère les catégories et les produits.
+     * Elle affiche un formulaire de confirmation pour supprimer un produit sélectionné dans une catégorie spécifique.
+     * Si la suppression est confirmée, le produit est supprimé de la base de données.
+     *
+     * @return void
+     */
     public function delete(): void
     {
         $this->checkConnexion();

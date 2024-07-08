@@ -25,16 +25,15 @@ class Article extends BaseModel
     public function insert(): void
     {
         try {
-            $sql = 'INSERT INTO `articles` (`id_article`, `title`, `content`, `picture`) 
-                    VALUES (:id_article, :title, :content, :picture);';
+            $sql = 'INSERT INTO `articles` (`title`, `content`, `picture`) 
+                    VALUES (:title, :content, :picture);';
             $stmt = $this->db->prepare($sql); 
-            $stmt->bindValue(':id_article', $this->id_article, PDO::PARAM_INT);
             $stmt->bindValue(':title', $this->title, PDO::PARAM_STR);
             $stmt->bindValue(':content', $this->content, PDO::PARAM_STR);
             $stmt->bindValue(':picture', $this->picture, PDO::PARAM_STR);
             $stmt->execute();
-        } catch (Exception) {
-            throw new Exception('Méthode insert de la classe Article défectueuse');
+        } catch (Exception $e) {
+            throw new Exception('Méthode insert de la classe Article défectueuse '.$e);
         }
     }
 

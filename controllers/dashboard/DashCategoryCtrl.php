@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Contrôleur de la gestion des catégories dans le tableau de bord.
- *
- * Ce contrôleur étend la classe Controller et fournit des méthodes pour lire et créer des catégories.
- */
 class DashCategoryCtrl extends Controller
 {
     /**
