@@ -157,3 +157,11 @@ td {
     font-style: italic;
     font-size: 90%;
 }
+
+#actual-picture{
+    width: 120px;
+}
+
+label{
+    font-weight: bold;
+}
