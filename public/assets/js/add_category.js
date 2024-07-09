@@ -70,4 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categories.push(category.name);
         });
     })
+    const main = document.querySelector('main');
+    const title = main.querySelector('h2');
+    title.scrollIntoView();
 });

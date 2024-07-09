@@ -96,4 +96,10 @@ class DashArticleCtrl extends Controller
         require_once __DIR__.'/../../views/dashboard/articles/add.php';
         require_once __DIR__.'/../../views/templates/template.php';
     }
+
+    public function update(): void
+    {
+        $this->checkConnexion();
+        
+    }
 }

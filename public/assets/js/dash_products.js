@@ -7,4 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 400);
         });
     });
+    const menu = document.querySelector('h1');
+    menu.scrollIntoView();
 });

@@ -110,3 +110,8 @@ picture.addEventListener('input', () => {
     checkPicture();
     checkButton();
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const title = document.querySelector('h2');
+    title.scrollIntoView();
+})

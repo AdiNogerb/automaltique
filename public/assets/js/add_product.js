@@ -191,3 +191,8 @@ bottle.addEventListener('keyup', (e) => {
         errorBottle.classList.add('d-none');
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const title = document.querySelector('h2');
+    title.scrollIntoView();
+})
