@@ -98,6 +98,11 @@ if (isset($_GET['page'])) {
             $page->read();
             break;
 
+        case 'dashboard/schedules/update':
+            $page = new DashScheduleCtrl();
+            $page->update();
+            break;
+
         default:
             header('Location: /index.php?page=home');
             die;
