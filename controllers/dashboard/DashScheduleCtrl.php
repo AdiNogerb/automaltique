@@ -21,6 +21,7 @@ class DashScheduleCtrl extends Controller
         $this->checkConnexion();
 
         $schedules = $this->listSchedules();
+        $isOk = false;
 
         if (!empty($_GET['id'])) {
             foreach ($schedules as $schedule) {
@@ -39,6 +40,10 @@ class DashScheduleCtrl extends Controller
             die;
         }
 
+        $opened = $scheduleSelected->opened ?? null;
+        $closed = $scheduleSelected->closed ?? null;
+        $happy_start = $scheduleSelected->happy_start ?? null;
+        $happy_end = $scheduleSelected->opened ?? null;
         $title = 'Modifier les horaires du '.$scheduleSelected->week_day;
 
         require_once __DIR__.'/../../views/dashboard/schedules/add.php';

@@ -87,40 +87,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Lundi</td>
-                        <td colspan="2">Fermé</td>
-                    </tr>
-                    <tr>
-                        <td>Mardi</td>
-                        <td>17h</td>
-                        <td>01h</td>
-                    </tr>
-                    <tr>
-                        <td>Mercredi</td>
-                        <td>17h</td>
-                        <td>01h</td>
-                    </tr>
-                    <tr>
-                        <td>Jeudi</td>
-                        <td>17h</td>
-                        <td>02h</td>
-                    </tr>
-                    <tr>
-                        <td>Vendredi</td>
-                        <td>17h</td>
-                        <td>02h</td>
-                    </tr>
-                    <tr>
-                        <td>Samedi</td>
-                        <td>17h</td>
-                        <td>02h</td>
-                    </tr>
-                    <tr>
-                        <td>Dimanche</td>
-                        <td>18h</td>
-                        <td>00h</td>
-                    </tr>
+                    <?php
+                    foreach ($schedules as $schedule) {?>
+                        <tr>
+                            <td><?=$schedule->week_day?></td>
+                            <?php
+                            if ($schedule->opened == null && $schedule->closed == null) { ?>
+                                <td colspan="2">Fermé</td>
+                            <?php } else { ?>
+                                <td><?=($schedule->opened < 10) ? '0'.$schedule->opened : $schedule->opened ?>h</td>
+                                <td><?=($schedule->closed < 10) ? '0'.$schedule->closed : $schedule->closed ?>h</td>
+                            <?php }
+                            ?>
+                        </tr>
+                    <?php }
+                    ?>
                 </tbody>
             </table>
         </div>

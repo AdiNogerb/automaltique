@@ -5,7 +5,7 @@
             <fieldset class="d-flex flex-column align-items-center">
                 <h2 class="poetsen-one-regular mb-5 fs-1 text-nowrap"><?=$title??''?></h2>
                 <form action="#" method="post" class="noto-sans w-100">
-                    <label for="category" class="pe-3 form-label">Nom :</label>
+                    <label for="category" class="form-label">Nom :</label>
                     <input type="text" name="category" id="category" class="form-control" title="Uniquement des lettres, traits d'union et apostrophe" placeholder="exemple: Bières pressions" pattern="<?=$this->adaptRegex(REGEXP_NAME)?>" value="<?=$name??''?>" required>
                     <p id="error" class="d-none text-danger fst-italic"></p>
                     <p class="text-danger fst-italic <?=($errorBack) ? '' : 'd-none'?>"><?=$errorBack??''?></p>

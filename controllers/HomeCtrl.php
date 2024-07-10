@@ -28,9 +28,27 @@ class HomeCtrl extends Controller
     {
         $pageScript = 'home';
         $articles = $this->listArticles();
+        $schedules = $this->listSchedules();
         $date = new DateTime('now', new DateTimeZone('Europe/Paris'));
         $day = $date->format('N');
         $hour = $date->format('G');
+
+        if ($schedules[$day-1]->opened == null && $schedules[$day-1]->closed == null) {
+            $message = 'FERMÉ';
+            $style = 'text-danger';
+            $image = '/public/assets/img/close.png';
+        } elseif ($schedules[$day-1]->closed < 12) {
+            if ($hour >= $schedules[$day-1]->happy_start && $hour < $schedules[$day-1]->happy_end) {
+                $image = '/public/assets/img/happy-hour.png';
+            } else if ($hour >= $schedules[$day-1]->happy_end) {
+                $image = '/public/assets/img/open.png';
+            } else {
+                $image = '/public/assets/img/close.png';
+            }
+            $message = ($hour < 1 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
+            $style = ($hour < 1 || $hour >= 17) ? 'text-success' : 'text-danger' ;
+        }
+                
 
         switch ($day) {
             case '1':
