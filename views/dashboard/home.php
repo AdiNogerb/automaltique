@@ -29,6 +29,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center">
         <h4 class="poetsen-one-regular mb-5 text-nowrap text-center">En PAS rapport avec la carte</h4>
         <a href="/index.php?page=dashboard/articles" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 mb-3">Les Articles</a>
+        <a href="/index.php?page=dashboard/schedules" class="rounded-5 px-3 btn btn-primary poetsen-one-regular fs-2 mb-3">Les Horaires</a>
     </div>
 </div>
 <?php $main = ob_get_clean() ?>

@@ -61,6 +61,16 @@ class Controller
         }
     }
 
+    public function listSchedules(): array
+    {
+        try {
+            $scheduleModel = new Schedule();
+            return $scheduleModel->getAll();
+        } catch (Exception $e) {
+            throw new Exception('Erreur lors de la récupération des produits: ' . $e->getMessage());
+        }
+    }
+
     /**
      * Adapte une chaîne de caractères pour l'utilisation dans une expression régulière.
      *
