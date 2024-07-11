@@ -23,7 +23,7 @@ class DashCategoryCtrl extends Controller
     {
         $this->checkConnexion();
 
-        $pageScript = 'dash_home';
+        $pageScript = 'dash_list';
         $categories = $this->listCategories();
 
         require_once __DIR__.'/../../views/dashboard/categories/list.php';

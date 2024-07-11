@@ -10,6 +10,7 @@ class DashScheduleCtrl extends Controller
     {
         $this->checkConnexion();
 
+        $pageScript = 'dash_list';
         $schedules = $this->listSchedules();
 
         require_once __DIR__.'/../../views/dashboard/schedules/list.php';
@@ -20,6 +21,7 @@ class DashScheduleCtrl extends Controller
     {
         $this->checkConnexion();
 
+        $pageScript = 'update_schedule';
         $schedules = $this->listSchedules();
         $isOk = false;
 
@@ -43,8 +45,12 @@ class DashScheduleCtrl extends Controller
         $opened = $scheduleSelected->opened ?? null;
         $closed = $scheduleSelected->closed ?? null;
         $happy_start = $scheduleSelected->happy_start ?? null;
-        $happy_end = $scheduleSelected->opened ?? null;
+        $happy_end = $scheduleSelected->happy_end ?? null;
         $title = 'Modifier les horaires du '.$scheduleSelected->week_day;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            var_dump($_POST);
+        }
 
         require_once __DIR__.'/../../views/dashboard/schedules/add.php';
         require_once __DIR__.'/../../views/templates/template.php';

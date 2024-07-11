@@ -14,6 +14,7 @@
                             <label for="closed" class="form-label">Fermeture :</label>
                             <input type="number" name="closed" id="closed" class="form-control" max="23" min="0" value="<?=$closed??null?>">
                         </div>
+                        <p id="error-open" class="d-none text-danger fst-italic"></p>
                     </div>
                     <div class="row mb-3">
                         <div class="col-6">
@@ -24,6 +25,11 @@
                             <label for="happy_end" class="form-label">Fin Happy :</label>
                             <input type="number" name="happy_end" id="happy_end" class="form-control" max="23" min="0" value="<?=$happy_end??null?>">
                         </div>
+                        <p id="error-happy" class="d-none text-danger fst-italic"></p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <p class="text-danger fst-italic <?=(isset($errorBack)) ? '' : 'd-none'?>"><?=$errorBack??''?></p>
+                        <button id="button" type="submit" class="btn btn-success fw-bold">Valider</button>
                     </div>
                 </form>
             </fieldset>

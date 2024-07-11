@@ -10,7 +10,7 @@ class DashArticleCtrl extends Controller
     {
         $this->checkConnexion();
 
-        $pageScript = 'dash_home';
+        $pageScript = 'dash_list';
         $articles = $this->listArticles();
 
         require_once __DIR__.'/../../views/dashboard/articles/list.php';

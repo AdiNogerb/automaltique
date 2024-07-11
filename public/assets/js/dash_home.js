@@ -4,6 +4,4 @@ document.addEventListener('DOMContentLoaded', () => {
     subTitles.forEach(subTitle => {
         subTitle.scrollIntoView();        
     });
-    const table = main.querySelector('table');
-    table.scrollIntoView();
 })
