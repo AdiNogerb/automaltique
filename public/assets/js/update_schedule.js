@@ -56,7 +56,7 @@ const check = () => {
             errorOpen.innerHTML = 'Les horaires d\'ouverture et fermeture ne peuvent pas être identiques';
         }
         if (happy_start.value !== happy_end.value) {
-            if (happy_start.value < happy_end.value) {
+            if (happy_start.value < happy_end.value && happy_start.value >= openedHour.value) {
                 happy_start.classList.add('is-valid');
                 happy_start.classList.remove('is-invalid');
                 happy_end.classList.add('is-valid');
@@ -69,7 +69,7 @@ const check = () => {
                 happy_end.classList.remove('is-valid');
                 happy_end.classList.add('is-invalid');
                 errorHappy.classList.remove('d-none');
-                errorHappy.innerHTML = 'Le début de l\'Happy ne peut pas être après la fin de l\'Happy';
+                errorHappy.innerHTML = 'Le début de l\'Happy ne peut pas être après la fin de l\'Happy ou avant l\'ouverture du bar';
             }
         } else {
             happy_start.classList.remove('is-valid');
