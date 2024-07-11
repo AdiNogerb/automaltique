@@ -38,101 +38,123 @@ class HomeCtrl extends Controller
             $style = 'text-danger';
             $image = '/public/assets/img/close.png';
         } elseif ($schedules[$day-1]->closed < 12) {
-            if ($hour >= $schedules[$day-1]->happy_start && $hour < $schedules[$day-1]->happy_end) {
-                $image = '/public/assets/img/happy-hour.png';
-            } else if ($hour >= $schedules[$day-1]->happy_end) {
-                $image = '/public/assets/img/open.png';
-            } else {
+            if ($hour < $schedules[$day-1]->opened || $hour >= ($schedules[$day]->closed ?? $schedules[0]->closed)) {
                 $image = '/public/assets/img/close.png';
-            }
-            $message = ($hour < 1 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
-            $style = ($hour < 1 || $hour >= 17) ? 'text-success' : 'text-danger' ;
-        }
-                
-
-        switch ($day) {
-            case '1':
                 $message = 'FERMÉ';
                 $style = 'text-danger';
+            } else {
+                if ($hour >= $schedules[$day-1]->happy_start && $hour < $schedules[$day-1]->happy_end) {
+                    $image = '/public/assets/img/happy-hour.png';
+                    $message = 'OUVERT';
+                    $style = 'text-success';
+                } else {
+                    $image = '/public/assets/img/open.png';
+                    $message = 'OUVERT';
+                    $style = 'text-success';
+                }
+                
+            }
+        } else {
+            if ($hour < $schedules[$day-1]->opened || $hour >= $schedules[$day-1]->closed) {
                 $image = '/public/assets/img/close.png';
-                break;
-            
-            case '2':
-                if ($hour >= 17 && $hour < 20) {
+                $message = 'FERMÉ';
+                $style = 'text-danger';
+            } else {
+                if ($hour >= $schedules[$day-1]->happy_start && $hour < $schedules[$day-1]->happy_end) {
                     $image = '/public/assets/img/happy-hour.png';
-                } else if ($hour >= 20) {
-                    $image = '/public/assets/img/open.png';
+                    $message = 'OUVERT';
+                    $style = 'text-success';
                 } else {
-                    $image = '/public/assets/img/close.png';
-                }
-                $message = ($hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
-                $style = ($hour >= 17) ? 'text-success' : 'text-danger' ;
-                break;
-                
-            case '3':
-                if ($hour >= 17 && $hour < 20) {
-                    $image = '/public/assets/img/happy-hour.png';
-                } else if ($hour >= 20) {
                     $image = '/public/assets/img/open.png';
-                } else {
-                    $image = '/public/assets/img/close.png';
+                    $message = 'OUVERT';
+                    $style = 'text-success';
                 }
-                $message = ($hour < 1 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
-                $style = ($hour < 1 || $hour >= 17) ? 'text-success' : 'text-danger' ;
-                break;
-            
-            case '4':
-                if ($hour >= 17 && $hour < 20) {
-                    $image = '/public/assets/img/happy-hour.png';
-                } else if ($hour >= 20) {
-                    $image = '/public/assets/img/open.png';
-                } else {
-                    $image = '/public/assets/img/close.png';
-                }
-                $message = ($hour < 1 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
-                $style = ($hour < 1 || $hour >= 17) ? 'text-success' : 'text-danger' ;
-                break;
-            
-            case '5':
-                if ($hour >= 17 && $hour < 20) {
-                    $image = '/public/assets/img/happy-hour.png';
-                } else if ($hour >= 20) {
-                    $image = '/public/assets/img/open.png';
-                } else {
-                    $image = '/public/assets/img/close.png';
-                }
-                $message = ($hour < 2 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
-                $style = ($hour < 2 || $hour >= 17) ? 'text-success' : 'text-danger' ;
-                break;
-                
-            case '6':
-                if ($hour >= 17 && $hour < 20) {
-                    $image = '/public/assets/img/happy-hour.png';
-                } else if ($hour >= 20) {
-                    $image = '/public/assets/img/open.png';
-                } else {
-                    $image = '/public/assets/img/close.png';
-                }
-                $message = ($hour < 2 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
-                $style = ($hour < 2 || $hour >= 17) ? 'text-success' : 'text-danger' ;
-                break;
-            
-            case '7':
-                if ($hour >= 18 && $hour < 20) {
-                    $image = '/public/assets/img/happy-hour.png';
-                } else if ($hour >= 20) {
-                    $image = '/public/assets/img/open.png';
-                } else {
-                    $image = '/public/assets/img/close.png';
-                }
-                $message = ($hour < 2 || $hour >= 18) ? 'OUVERT' : 'FERMÉ' ;
-                $style = ($hour < 2 || $hour >= 18) ? 'text-success' : 'text-danger' ;
-                break;
-                
-            default:
-                $message = 'null';
-                break;
+            }
         }
+                
+        // switch ($day) {
+        //     case '1':
+        //         $message = 'FERMÉ';
+        //         $style = 'text-danger';
+        //         $image = '/public/assets/img/close.png';
+        //         break;
+            
+        //     case '2':
+        //         if ($hour >= 17 && $hour < 20) {
+        //             $image = '/public/assets/img/happy-hour.png';
+        //         } else if ($hour >= 20) {
+        //             $image = '/public/assets/img/open.png';
+        //         } else {
+        //             $image = '/public/assets/img/close.png';
+        //         }
+        //         $message = ($hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
+        //         $style = ($hour >= 17) ? 'text-success' : 'text-danger' ;
+        //         break;
+                
+        //     case '3':
+        //         if ($hour >= 17 && $hour < 20) {
+        //             $image = '/public/assets/img/happy-hour.png';
+        //         } else if ($hour >= 20) {
+        //             $image = '/public/assets/img/open.png';
+        //         } else {
+        //             $image = '/public/assets/img/close.png';
+        //         }
+        //         $message = ($hour < 1 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
+        //         $style = ($hour < 1 || $hour >= 17) ? 'text-success' : 'text-danger' ;
+        //         break;
+            
+        //     case '4':
+        //         if ($hour >= 17 && $hour < 20) {
+        //             $image = '/public/assets/img/happy-hour.png';
+        //         } else if ($hour >= 20) {
+        //             $image = '/public/assets/img/open.png';
+        //         } else {
+        //             $image = '/public/assets/img/close.png';
+        //         }
+        //         $message = ($hour < 1 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
+        //         $style = ($hour < 1 || $hour >= 17) ? 'text-success' : 'text-danger' ;
+        //         break;
+            
+        //     case '5':
+        //         if ($hour >= 17 && $hour < 20) {
+        //             $image = '/public/assets/img/happy-hour.png';
+        //         } else if ($hour >= 20) {
+        //             $image = '/public/assets/img/open.png';
+        //         } else {
+        //             $image = '/public/assets/img/close.png';
+        //         }
+        //         $message = ($hour < 2 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
+        //         $style = ($hour < 2 || $hour >= 17) ? 'text-success' : 'text-danger' ;
+        //         break;
+                
+        //     case '6':
+        //         if ($hour >= 17 && $hour < 20) {
+        //             $image = '/public/assets/img/happy-hour.png';
+        //         } else if ($hour >= 20) {
+        //             $image = '/public/assets/img/open.png';
+        //         } else {
+        //             $image = '/public/assets/img/close.png';
+        //         }
+        //         $message = ($hour < 2 || $hour >= 17) ? 'OUVERT' : 'FERMÉ' ;
+        //         $style = ($hour < 2 || $hour >= 17) ? 'text-success' : 'text-danger' ;
+        //         break;
+            
+        //     case '7':
+        //         if ($hour >= 18 && $hour < 20) {
+        //             $image = '/public/assets/img/happy-hour.png';
+        //         } else if ($hour >= 20) {
+        //             $image = '/public/assets/img/open.png';
+        //         } else {
+        //             $image = '/public/assets/img/close.png';
+        //         }
+        //         $message = ($hour < 2 || $hour >= 18) ? 'OUVERT' : 'FERMÉ' ;
+        //         $style = ($hour < 2 || $hour >= 18) ? 'text-success' : 'text-danger' ;
+        //         break;
+                
+        //     default:
+        //         $message = 'null';
+        //         break;
+        // }
 
         require_once __DIR__ . '/../views/home.php';
         require_once __DIR__ . '/../views/templates/template.php';
