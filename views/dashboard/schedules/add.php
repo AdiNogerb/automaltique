@@ -27,7 +27,7 @@
                         </div>
                         <p id="error-happy" class="d-none text-danger fst-italic"></p>
                     </div>
-                    <div class="d-flex justify-content-center align-items-center mt-3">
+                    <div class="d-flex flex-column justify-content-center align-items-center mt-3">
                         <p class="text-danger fst-italic <?=(isset($errorBack)) ? '' : 'd-none'?>"><?=$errorBack??''?></p>
                         <button id="button" type="submit" class="btn btn-success fw-bold">Valider</button>
                     </div>
