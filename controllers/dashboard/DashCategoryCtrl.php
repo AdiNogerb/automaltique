@@ -24,6 +24,7 @@ class DashCategoryCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'dash_list';
+        $year = $this->year();
         $categories = $this->listCategories();
 
         require_once __DIR__.'/../../views/dashboard/categories/list.php';
@@ -43,6 +44,7 @@ class DashCategoryCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'add_category';
+        $year = $this->year();
         $title = 'Ajouter une Catégorie';
         $errorBack = false;
 
@@ -103,6 +105,7 @@ class DashCategoryCtrl extends Controller
         }
         
         $pageScript = 'add_category';
+        $year = $this->year();
         $title = 'Modifier la Catégorie '.$name;
         $errorBack = false;
 
@@ -162,6 +165,7 @@ class DashCategoryCtrl extends Controller
         }
 
         $pageScript = 'del_category';
+        $year = $this->year();
         $title = 'Supprimer la Catégorie '.$name;
         $errorBack = false;
 

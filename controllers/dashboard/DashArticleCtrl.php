@@ -11,6 +11,7 @@ class DashArticleCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'dash_list';
+        $year = $this->year();
         $articles = $this->listArticles();
 
         require_once __DIR__.'/../../views/dashboard/articles/list.php';
@@ -22,6 +23,7 @@ class DashArticleCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'add_article';
+        $year = $this->year();
         $title = 'Ajouter un nouvel article';
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -106,6 +108,7 @@ class DashArticleCtrl extends Controller
         $this->checkConnexion();
         
         $pageScript = 'update_article';
+        $year = $this->year();
         $articles = $this->listArticles();
         $isOk = false;
         $update = true;
@@ -212,6 +215,7 @@ class DashArticleCtrl extends Controller
     public function delete(): void
     {
         $this->checkConnexion();
+        $year = $this->year();
         $articles = $this->listArticles();
         $isOk = false;
         $update = true;

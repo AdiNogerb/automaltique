@@ -100,4 +100,10 @@ class Controller
             die;
         }
     }
+
+    public function year(): string
+    {
+        $date = new DateTime();
+        return $date->format('Y');
+    }
 }

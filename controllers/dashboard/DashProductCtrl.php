@@ -23,6 +23,7 @@ class DashProductCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'dash_products';
+        $year = $this->year();
         $categories = $this->listCategories();
         $products = $this->listProducts();
 
@@ -41,6 +42,7 @@ class DashProductCtrl extends Controller
     public function create(): void
     {
         $this->checkConnexion();
+        $year = $this->year();
         $categories = $this->listCategories();
         $isOk = false;
         
@@ -145,6 +147,7 @@ class DashProductCtrl extends Controller
     public function update(): void
     {
         $this->checkConnexion();
+        $year = $this->year();
         $categories = $this->listCategories();
         $products = $this->listProducts();
         $isOk = false;
@@ -267,6 +270,7 @@ class DashProductCtrl extends Controller
     public function delete(): void
     {
         $this->checkConnexion();
+        $year = $this->year();
         $categories = $this->listCategories();
         $products = $this->listProducts();
         $isOk = false;

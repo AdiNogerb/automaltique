@@ -28,6 +28,7 @@ class DashHomeCtrl extends Controller
     public function renderView()
     {
         $pageScript = 'dash_home';
+        $year = $this->year();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($_POST['password'])) {

@@ -29,6 +29,7 @@ class MenuCtrl extends Controller
     {
         try {
             $pageScript = 'menu';
+            $year = $this->year();
             $categories = $this->listCategories();
             $products = $this->listProducts();
 

@@ -11,6 +11,7 @@ class DashScheduleCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'dash_list';
+        $year = $this->year();
         $schedules = $this->listSchedules();
 
         require_once __DIR__.'/../../views/dashboard/schedules/list.php';
@@ -22,6 +23,7 @@ class DashScheduleCtrl extends Controller
         $this->checkConnexion();
 
         $pageScript = 'update_schedule';
+        $year = $this->year();
         $schedules = $this->listSchedules();
         $isOk = false;
 

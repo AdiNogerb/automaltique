@@ -65,11 +65,11 @@
             <a href=""><i class="fa-2xl fa-brands fa-instagram mx-5" style="color: #ffffff;"></i></a>
             <a href=""><i class="fa-2xl fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
         </div>
-        <p id="copyright" class="noto-sans text-center py-3 text-white">&copy; 2024 L'Automaltique. Tous droits réservés. || <a href="/index.php?page=legal" target="_blank" class="text-white">Mentions Légales</a></p>
+        <p id="copyright" class="noto-sans text-center py-3 text-white m-0">&copy; <?=$year?> XR BAR&CO. Tous droits réservés. || <a href="/index.php?page=legal" target="_blank" class="text-white">Mentions Légales</a></p>
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/public/assets/js/banner.js"></script>
-    <script src="<?=(isset($pageScript)) ? '/public/assets/js/'.$pageScript.'.js' : ''?>"></script>
+    <?=(isset($pageScript)) ? '<script src="/public/assets/js/'.$pageScript.'.js"></script>' : ''?>
 </body>
 </html>
