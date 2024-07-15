@@ -16,6 +16,9 @@
 .text-yellow {
     color: #FDBB2D;
 }
+.text-yellow:hover{
+    color: #FDBB2D;
+}
 
 .text-blue {
     color: #1D364A;
@@ -164,4 +167,8 @@ td {
 
 label{
     font-weight: bold;
+}
+
+#copyright{
+    font-size: 100%;
 }

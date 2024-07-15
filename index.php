@@ -10,6 +10,7 @@ require __DIR__.'/models/Schedule.php';
 require __DIR__.'/controllers/Controller.php';
 require __DIR__.'/controllers/HomeCtrl.php';
 require __DIR__.'/controllers/MenuCtrl.php';
+require __DIR__.'/controllers/LegalCtrl.php';
 require __DIR__.'/controllers/dashboard/DashHomeCtrl.php';
 require __DIR__.'/controllers/dashboard/DashCategoryCtrl.php';
 require __DIR__.'/controllers/dashboard/DashProductCtrl.php';
@@ -101,6 +102,11 @@ if (isset($_GET['page'])) {
         case 'dashboard/schedules/update':
             $page = new DashScheduleCtrl();
             $page->update();
+            break;
+
+        case 'legal':
+            $page = new LegalCtrl();
+            $page->renderView();
             break;
 
         default:

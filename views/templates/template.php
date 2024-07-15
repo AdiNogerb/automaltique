@@ -27,14 +27,18 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center me-lg-3">
                     <li class="nav-item">
-                        <a class="text-white noto-sans nav-link active" aria-current="page" href="/index.php?page=home">Accueil</a>
+                        <a class="noto-sans nav-link <?=($_GET['page'] === 'home') ? 'text-yellow fw-bold' : 'text-white'?>" href="/index.php?page=home">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-white noto-sans nav-link" href="/index.php?page=menu">Carte</a>
+                        <a class="noto-sans nav-link <?=($_GET['page'] === 'menu') ? 'text-yellow fw-bold' : 'text-white'?>" href="/index.php?page=menu">Carte</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="text-white noto-sans nav-link" href="/index.php?page=dashboard">Paramètres</a>
-                    </li>
+                    <?php
+                    if (strpos($_GET['page'], 'dashboard') !== false) {?>
+                        <li class="nav-item">
+                            <a class="noto-sans nav-link text-yellow fw-bold" href="/index.php?page=dashboard">Paramètres</a>
+                        </li>
+                    <?php }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -54,13 +58,14 @@
         <?=$main??''?>
 
     </main>
-    <footer class="py-5">
+    <footer class="pt-5">
         <h2 class="poetsen-one-regular text-white text-center fs-1 text-decoration-underline mb-5">Suivez nous</h2>
         <div class="d-flex justify-content-center">
             <a href="https://www.facebook.com/Automaltique/"><i class="fa-2xl fa-brands fa-facebook" style="color: #ffffff;"></i></a>
             <a href=""><i class="fa-2xl fa-brands fa-instagram mx-5" style="color: #ffffff;"></i></a>
             <a href=""><i class="fa-2xl fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
         </div>
+        <p id="copyright" class="noto-sans text-center py-3 text-white">&copy; 2024 L'Automaltique. Tous droits réservés. || <a href="/index.php?page=legal" target="_blank" class="text-white">Mentions Légales</a></p>
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
