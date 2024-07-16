@@ -59,13 +59,16 @@
 
     </main>
     <footer class="pt-5">
-        <h2 class="poetsen-one-regular text-white text-center fs-1 text-decoration-underline mb-5">Suivez nous</h2>
-        <div class="d-flex justify-content-center">
-            <a href="https://www.facebook.com/Automaltique/"><i class="fa-2xl fa-brands fa-facebook" style="color: #ffffff;"></i></a>
-            <a href=""><i class="fa-2xl fa-brands fa-instagram mx-5" style="color: #ffffff;"></i></a>
+        <h2 class="poetsen-one-regular text-white text-center fs-1 text-decoration-underline mb-3">Suivez nous</h2>
+        <div class="d-flex justify-content-center mb-5">
+            <a href="https://www.facebook.com/Automaltique/" target="_blank"><i class="fa-2xl fa-brands fa-facebook" style="color: #ffffff;"></i></a>
+            <a href="https://www.instagram.com/lautomaltique/" target="_blank"><i class="fa-2xl fa-brands fa-instagram mx-5" style="color: #ffffff;"></i></a>
             <a href=""><i class="fa-2xl fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
         </div>
-        <p id="copyright" class="noto-sans text-center py-3 text-white m-0">&copy; <?=$year?> XR BAR&CO. Tous droits réservés. || <a href="/index.php?page=legal" target="_blank" class="text-white">Mentions Légales</a></p>
+        <div class="d-flex flex-column flex-md-row justify-content-around">
+            <p id="copyright" class="noto-sans text-center py-3 text-white m-0">&copy; <?=$year?> XR BAR&CO. Tous droits réservés. || <a href="/index.php?page=legal" target="_blank" class="text-white">Mentions Légales</a></p>
+            <p class="noto-sans text-center py-3 text-white m-0">Développé par <a href="https://adrienbregon.fr/" target="_blank" class="text-yellow">Adrien Bregon</a></p>
+        </div>
     </footer>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

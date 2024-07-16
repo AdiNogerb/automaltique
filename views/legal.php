@@ -30,7 +30,7 @@
         <div class="my-3">
             <p>Propriété intellectuelle :</p>
             <p>Sauf mention contraire, les contenus de ce site sont la propriété de XR BAR&CO. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
-            <p>Certaines images utilisées sur ce site proviennent de Pixabay et sont sous licence Creative Commons Zero (CC0).</p>
+            <p>Certaines images utilisées sur ce site proviennent de Pixabay et sont sous licence Creative Commons Zero (CC0). Crédit photo pour l'image de l'article "Le Concept" : <a href="https://pixabay.com/fr/users/veex-4342647/" target="_blank">Veex</a></p>
         </div>
         <hr>
         <p>Mention de copyright :</p>
