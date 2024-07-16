@@ -37,11 +37,13 @@
     ],
     "related_applications": [
       {
-        "platform": "web"
+        "platform": "web",
+        "url": "https://automaltique.fr"
       },
       {
         "platform": "play",
-        "url": "https://automaltique.fr"
+        "url": "https://play.google.com/store/apps/details?id=com.automaltique",
+        "id": "com.automaltique"
       }
     ]
   }
