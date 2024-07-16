@@ -38,8 +38,8 @@ class HomeCtrl extends Controller
             $message = 'FERMÉ';
             $style = 'text-danger';
             $image = '/public/assets/img/close.png';
-        } elseif ($schedules[$day-1]->closed < 12) {
-            if ($hour < $schedules[$day-1]->opened || $hour >= ($schedules[$day]->closed ?? $schedules[0]->closed)) {
+        } elseif ($schedules[$day-2]->closed < 12 ?? $schedules[6]->closed < 12) {
+            if ($hour < $schedules[$day-1]->opened && $hour >= ($schedules[$day-2]->closed ?? $schedules[6]->closed)) {
                 $image = '/public/assets/img/close.png';
                 $message = 'FERMÉ';
                 $style = 'text-danger';
