@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez l'Automaltique, le bar à bière incontournable à Amiens ! Profitez de nos soirées blind test animées et conviviales tout en dégustant une sélection unique de bières artisanales. Rejoignez-nous pour une expérience inoubliable !">
     <link rel="icon" type="image/png" href="/public/assets/img/favicon.png">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
