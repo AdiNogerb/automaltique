@@ -28,7 +28,6 @@
     <meta name="twitter:title" content="Automaltique - Le Bar à Bière Incontournable à Amiens">
     <meta name="twitter:description" content="Découvrez l'Automaltique, le bar à bière incontournable à Amiens ! Profitez de nos soirées blind test animées et conviviales tout en dégustant une sélection unique de bières artisanales. Rejoignez-nous pour une expérience inoubliable !">
     <meta name="twitter:image" content="https://automaltique.fr/public/assets/img/favicon.png">
-
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-black sticky-top">
