@@ -13,7 +13,22 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/assets/css/style.css">
     <script src="https://kit.fontawesome.com/e0df362f98.js" crossorigin="anonymous"></script>
-    <title>Automaltique</title>
+
+    <title>Automaltique - Le Bar à Bière Incontournable à Amiens</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Automaltique - Le Bar à Bière Incontournable à Amiens" />
+    <meta property="og:description" content="Découvrez l'Automaltique, le bar à bière incontournable à Amiens ! Profitez de nos soirées blind test animées et conviviales tout en dégustant une sélection unique de bières artisanales. Rejoignez-nous pour une expérience inoubliable !" />
+    <meta property="og:image" content="https://automaltique.fr/public/assets/img/favicon.png" />
+    <meta property="og:url" content="https://automaltique.fr" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automaltique - Le Bar à Bière Incontournable à Amiens">
+    <meta name="twitter:description" content="Découvrez l'Automaltique, le bar à bière incontournable à Amiens ! Profitez de nos soirées blind test animées et conviviales tout en dégustant une sélection unique de bières artisanales. Rejoignez-nous pour une expérience inoubliable !">
+    <meta name="twitter:image" content="https://automaltique.fr/public/assets/img/favicon.png">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-black sticky-top">
